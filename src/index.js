@@ -6,13 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import Join from "./components/Join/Join";
 import {
   BrowserRouter as Router,
-  Route
 } from 'react-router-dom';
 
 
 ReactDOM.render(
   <Router>
-    <Route path='/' component={Join} />
+    <App />
   </Router>,
   document.getElementById('app')
 );
