@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Join from "./components/Join/Join";
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Route path='/' component={Join} />
+  </Router>,
   document.getElementById('app')
 );
 
