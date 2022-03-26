@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Join.css";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo.jpg";
 import { Link } from "react-router-dom";
 
 let user;
@@ -25,7 +25,7 @@ const Join = () => {
           id="joinInput"
         ></input>
         <Link onChange={(e)=>!name ? e.preventDefault():null} to="/chat"> </Link>{" "}
-        <button onClick={sendUser} className="JoinBtn ">
+        <button onClick={sendUser} className="JoinBtn btn btn-three">
           Login
         </button>
       </div>

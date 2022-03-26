@@ -2,11 +2,15 @@
   background-image: url("https://st3.depositphotos.com/1103339/13209/v/1600/depositphotos_132095056-stock-illustration-abstract-seamless-pattern-in-postmodern.jpg");
   background: rgb(2,0,36);
   background: linear-gradient(117deg, rgba(2,0,36,1) 0%, rgba(125,129,150,0.9757503221014968) 96%, rgba(222,199,45,1) 98%, rgba(222,199,45,1) 98%, rgba(142,49,242,0.5859143339953169) 98%);
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: cursive;
+  border-radius: 1rem;
+  color: #ffff;
+  margin: 2em 5em 3em 5em;
+  padding: 2em 6em 2em 6em;
+  text-align:center;
 }
 .JoinContainer {
   border: 2px solid white;
@@ -28,22 +32,7 @@
   padding: 1vmax;
   box-sizing: border-box;
 }
-.JoinBtn {
-  width: 25vmax;
-  padding: 1.5vmax;
-  border: none;
-  outline: none;
-  font-size: 1.2vmax;
-  margin: 2vmax;
-  box-sizing: border-box;
-  color: #ff6666;
-  font-family: "Roboto";
-  transition: all 0.3s;
-  cursor: pointer;
-}
-.JoinBtn:hover {
-  background-color: rgb(180, 27, 58);
-}
+
 #joinInput {
   width: 25vmax;
   padding: 1.5vmax;
@@ -51,5 +40,51 @@
   outline: none;
   font-size: 1.2vmax;
   box-sizing: border-box;
-  background-color: #ff9999;
+  background-color: #3C3C3C;
+}
+.btn {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+  margin-top:2.5%;
+  background-color: #3C3C3C;
+}
+.btn-three {
+  color: #FFF;
+  transition: all 0.5s;
+  position: relative;
+}
+.btn-three::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255,255,255,0.1);
+  transition: all 0.3s;
+}
+.btn-three:hover::before {
+  opacity: 0 ;
+  transform: scale(0.5,0.5);
+}
+.btn-three::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255,255,255,0.5);
+  transform: scale(1.2,1.2);
+}
+.btn-three:hover::after {
+  opacity: 1;
+  transform: scale(1,1);
 }
