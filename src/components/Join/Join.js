@@ -24,7 +24,7 @@ const Join = () => {
           type="text"
           id="joinInput"
         ></input>
-        <Link onChange={(e)=>!name ? e.preventDefault():null} to="/chat"> </Link>{" "}
+        <Link onChange={(e)=>!name ? e.preventDefault():null} to='/chat'> </Link>
         <button onClick={sendUser} className="JoinBtn btn btn-three">
           Login
         </button>
