@@ -15,7 +15,7 @@ const Join = () => {
 
   return (
     <div className="JoinPage">
-      <div className="JoinContainer">
+      <div className="JoinContainer ">
         <img src={logo} alt="logo" />
         <h1>Infinity Chat</h1>
         <input
