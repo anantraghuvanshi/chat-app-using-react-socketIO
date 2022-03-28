@@ -7,7 +7,7 @@ let user;
 
 const sendUser = () => {
   user = document.getElementById("joinInput").value;
-  document.getElementById("joinInput").value = " ";
+  document.getElementById("joinInput").value = "";
 };
 
 const Join = () => {
@@ -24,14 +24,18 @@ const Join = () => {
           type="text"
           id="joinInput"
         ></input>
-        <Link to='/chat' onChange={(event)=>!name ? event.preventDefault():null} > </Link>
-        <button onClick={sendUser} className="JoinBtn btn btn-three">
-          Login
-        </button>
+        <Link
+          to="/chat"
+          onChange={(event) => (!name ? event.preventDefault() : null)}
+        >
+          <button onClick={sendUser} className="JoinBtn btn btn-three">
+            Login
+          </button>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Join
-export { user }
+export default Join;
+export { user };
