@@ -24,7 +24,7 @@ const Join = () => {
           type="text"
           id="joinInput"
         ></input>
-        <Link to='/chat' onChange={(e)=>!name ? e.preventDefault():null} > </Link>
+        <Link to='/chat' onChange={(event)=>!name ? event.preventDefault():null} > </Link>
         <button onClick={sendUser} className="JoinBtn btn btn-three">
           Login
         </button>
@@ -33,5 +33,5 @@ const Join = () => {
   );
 };
 
-export default Join;
-export { user };
+export default Join
+export { user }
