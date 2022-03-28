@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { user } from "../Join/Join";
 import socketIO from "socket.io-client";
 
-const ENDPOINT ="https://localhost:4500/";
+const ENDPOINT ="http://localhost:4500/";
 
 const Chat = () => {
 
@@ -13,12 +13,12 @@ const Chat = () => {
   useEffect(() => {
     socket.on("connect",()=>{
       alert("Connected");
-    } )
+    })
   
     return () => {
       
     }
-  }, [])
+  }, [socket])
   
 
   return (
