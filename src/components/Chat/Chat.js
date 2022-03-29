@@ -5,6 +5,7 @@ import "./Chat.css";
 import sendLogo from "../../images/send.png";
 import Message from "../Message/Message";
 import ReactScrollToBottom from "react-scroll-to-bottom";
+import closeIcon from "../../images/closeIcon.png";
 
 const ENDPOINT = "http://localhost:4500/";
 
@@ -12,7 +13,8 @@ let socket;
 
 const Chat = () => {
   const [id, setId] = useState("");
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState([]);
+
   const send = () => {
     const message = document.getElementById("chatInput").value;
     socket.emit("message", { message, id });
@@ -58,19 +60,34 @@ const Chat = () => {
 
     return () => {
       socket.off();
-    }
-    ;
+    };
   }, [messages]);
 
   return (
     <div className="chatPage">
       <div className="chatContainer">
-        <div className="header"> </div>
+        <div className="header">
+          <h2>C CHAT</h2>
+          <a href="/">
+            {" "}
+            <img src={closeIcon} alt="Close" />
+          </a>
+        </div>
         <ReactScrollToBottom className="chatBox">
-        {messages.map((item,i)=> {<Message message={item.message}/>})}
+          {messages.map((item, i) => (
+            <Message
+              user={item.id === id ? "" : item.user}
+              message={item.message}
+              classs={item.id === id ? "right" : "left"}
+            />
+          ))}
         </ReactScrollToBottom>
         <div className="inputBox">
-          <input type="text" id="chatInput" />
+          <input
+            onKeyPress={(event) => (event.key === "Enter" ? send() : null)}
+            type="text"
+            id="chatInput"
+          />
           <button onClick={send} className="sendBtn">
             <img src={sendLogo} alt="Send" />
           </button>
