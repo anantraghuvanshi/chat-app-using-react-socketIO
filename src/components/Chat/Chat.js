@@ -25,7 +25,6 @@ const Chat = () => {
     socket = socketIO(ENDPOINT, { transports: ["websocket"] });
 
     socket.on("connect", () => {
-      alert("Connected");
       setId(socket.id);
     });
     console.log(socket);
