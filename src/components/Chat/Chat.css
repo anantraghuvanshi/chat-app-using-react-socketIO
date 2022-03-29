@@ -42,6 +42,8 @@
 
  height: 70%;
  box-sizing: border-box;
+ border: 0.2vmax solid black;
+ overflow-y: auto;
 
 }
 
